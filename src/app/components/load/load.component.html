@@ -1,1 +1,50 @@
-<p>load works!</p>
+<div class="row">
+    <div class="col-md-4">
+        <h3>Seleccione Archivos</h3>
+        <div class="well drop-zoner">
+            <h4>
+                Deje caer aqui los archivos
+            </h4>
+            <img src="assets/drop-images.png">
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h4>
+            Cargar Archivos
+        </h4>
+        <button (click)="cargarImagenes()" [disabled]="files.length===0" class="btn btn-success ml-2">Cargar a Firebase</button>
+        <button class="btn btn-danger ml-2">Limpiar</button>
+
+        <table class="table">
+            <thead class="thead=dark">
+                <tr>
+                    <th>
+                        Nombre Archivo
+                    </th>
+                    <th>
+                        Tamaño
+                    </th>
+                    <th>
+                        Progreso
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        2
+                    </td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"> 25%</div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
