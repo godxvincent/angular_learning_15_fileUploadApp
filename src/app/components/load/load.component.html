@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-4">
         <h3>Seleccione Archivos</h3>
-        <div class="well drop-zoner">
+        <div class="well drop-zoner text-center" [ngClass]="{'file-over': overDropDiv}" (mouseOnElement)="overDropDiv = $event" appNgDropFiles [dirFiles]="loadFiles">
             <h4>
                 Deje caer aqui los archivos
             </h4>
@@ -12,8 +12,8 @@
         <h4>
             Cargar Archivos
         </h4>
-        <button (click)="cargarImagenes()" [disabled]="files.length===0" class="btn btn-success ml-2">Cargar a Firebase</button>
-        <button class="btn btn-danger ml-2">Limpiar</button>
+        <button (click)="cargarImagenes()" [disabled]="loadFiles.length===0" class="btn btn-success ml-2">Cargar a Firebase</button>
+        <button class="btn btn-danger ml-2" (click)="limpiarArchivos()">Limpiar</button>
 
         <table class="table">
             <thead class="thead=dark">
@@ -30,16 +30,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        1
+                <tr *ngFor="let photo of loadFiles">
+                    <td [ngClass]="{'text-green': photo.loaded}">
+                        {{ photo.name }}
                     </td>
                     <td>
-                        2
+                        {{ (photo.file.size/1024/1024) | number:'.2-2' }} MB
                     </td>
                     <td>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"> 25%</div>
+                            <div class="progress-bar" role="progressbar" [ngClass]="{'bg-success': !photo.loaded}" [ngStyle]="{ 'width': photo.progress + '%'}"></div>
                         </div>
                     </td>
                 </tr>

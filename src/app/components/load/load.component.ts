@@ -9,7 +9,8 @@ import { ImageLoaderService } from '../../services/image-loader.service';
 })
 export class LoadComponent implements OnInit {
 
-  files: FileItem[] = [];
+  loadFiles: FileItem[] = [];
+  overDropDiv = false;
 
   constructor(private imageLoaderService: ImageLoaderService) { }
 
@@ -17,7 +18,11 @@ export class LoadComponent implements OnInit {
   }
 
   cargarImagenes(): void {
-    this.imageLoaderService.cargarImagenesFireBase( this.files );
+    this.imageLoaderService.cargarImagenesFireBase( this.loadFiles );
+  }
+
+  limpiarArchivos(): void {
+    this.loadFiles = [];
   }
 
 }

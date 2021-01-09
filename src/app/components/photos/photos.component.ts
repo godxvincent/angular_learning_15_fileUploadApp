@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImageLoaderService } from '../../services/image-loader.service';
 
 
 @Component({
@@ -8,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotosComponent implements OnInit {
 
-
-  constructor() { }
+  photosLoaded: any;
+  constructor(private imageLoaderService: ImageLoaderService) { }
 
   ngOnInit(): void {
+    this.imageLoaderService.recuperarImagenes().subscribe ( data => {
+      this.photosLoaded = data;
+    });
   }
 
 }

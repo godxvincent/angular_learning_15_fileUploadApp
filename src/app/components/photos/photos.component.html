@@ -1,1 +1,10 @@
-<p>photos works!</p>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let photo of photosLoaded">
+        <div class="card h-100">
+            <img [src]="photo.url" class="card-img-top" [alt]="photo.nombre">
+            <div class="card-body">
+                <h5 class="card-title">{{photo.nombre}} </h5>
+            </div>
+        </div>
+    </div>
+</div>

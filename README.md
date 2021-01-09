@@ -43,6 +43,8 @@ https://quicktype.io/
 * ng-starrating
 https://www.npmjs.com/package/ng-starrating
 
+* Eventos del dom disponibles
+https://www.w3schools.com/jsref/dom_obj_event.asp
 
 ## How to remove sensitve data
 
