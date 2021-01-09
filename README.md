@@ -38,13 +38,20 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## ** Links de interés  ** 
 
 * quicktype
+
 https://quicktype.io/
 
 * ng-starrating
+
 https://www.npmjs.com/package/ng-starrating
 
 * Eventos del dom disponibles
+
 https://www.w3schools.com/jsref/dom_obj_event.asp
+
+* Firebase
+
+https://firebaseopensource.com/projects/angular/angularfire2/#example_use
 
 ## How to remove sensitve data
 
